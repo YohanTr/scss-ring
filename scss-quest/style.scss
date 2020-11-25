@@ -1,0 +1,72 @@
+body {
+    font-family: 'Fondamento', cursive;
+}
+@mixin container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+.navbar {
+    background-color: #FF893C;
+}
+.nav-link {
+    color: white;
+}
+.page-footer {
+    background-color: #FF893C;
+}
+.list-unstyled a {
+    color: white;
+}
+
+@mixin mixin-ring {
+    border: 5px solid #FF8300;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.firstring-1 {
+    @include mixin-ring;
+}
+.firstring-2 {
+    @include mixin-ring;
+}
+.secondring-1 {
+    border: 5px solid #FFDC5B;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px #FFD667;
+}
+.the-one {
+    @include container;
+}
+.precious {
+    @include container;
+}
+.find-it {
+    @include container;
+}
+@mixin ringloop {
+        border-radius: 50%;
+}
+.ringloop- {
+    @include ringloop;
+}
+
+@for $i from 1 through 6 {
+    .ringloop-#{$i} {
+        margin-left: (-5px*$i) /1.2;
+        width: $i * 20px;
+        height: $i *20px;
+        box-shadow: 2px 2px 2px black;
+        border: $i * 2px solid black;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        @include ringloop;
+        align-self: center;
+    }
+}
